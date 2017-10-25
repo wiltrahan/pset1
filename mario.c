@@ -14,14 +14,25 @@ int main(void) {
     char hash = '#';
     char space = ' ';
 
-    for(int i = 0; i <= height - 1; i++) {
+    //first loop sets height. i basically sets up the rest of the loops
+    for(int i = 1; i <= height; i++) {
 
-        for(int j = height; j > i + 1; j--) {
+    //second loop prints spaces based on height & i
+        for(int spaces = height; spaces > i; spaces--) {
             printf("%c", space);
         }
-            for(int k = 0; k <= i + 1; k++) {
-                printf("%c", hash);
-            }
+    //third loop prints hashes based on i from first loop
+        for(int leftHash = 1; leftHash <= i; leftHash++) {
+            printf("%c", hash);
+        }
+    //double space to start second pyramid
+        printf("  ");
+
+    //right pyramid
+        for(int rightHash = 1; rightHash <= i; rightHash++) {
+            printf("%c", hash);
+        }
+
         printf("\n");
     }
 }
